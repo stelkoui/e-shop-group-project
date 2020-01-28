@@ -24,6 +24,7 @@ public class Product implements Serializable{
     private String pcolor;
     private String psize;
     private String pdescr;
+    private String pdescr2;
     private String pgender;
     private int pquant;
     private Double pprice;
@@ -32,13 +33,14 @@ public class Product implements Serializable{
     public Product() {
     }
 
-    public Product(int pcode, String pcategory, String psubcat, String pcolor, String psize, String pdescr, String pgender, int pquant, Double pprice, String purl) {
+    public Product(int pcode, String pcategory, String psubcat, String pcolor, String psize, String pdescr,String pdescr2, String pgender, int pquant, Double pprice, String purl) {
         this.pcode = pcode;
         this.pcategory = pcategory;
         this.psubcat = psubcat;
         this.pcolor = pcolor;
         this.psize = psize;
         this.pdescr = pdescr;
+        this.pdescr2=pdescr2;
         this.pgender = pgender;
         this.pquant = pquant;
         this.pprice = pprice;
@@ -51,6 +53,14 @@ public class Product implements Serializable{
 
     public void setPurl(String purl) {
         this.purl = purl;
+    }
+
+    public String getPdescr2() {
+        return pdescr2;
+    }
+
+    public void setPdescr2(String pdescr2) {
+        this.pdescr2 = pdescr2;
     }
 
    
@@ -124,17 +134,18 @@ public class Product implements Serializable{
 
     @Override
     public int hashCode() {
-        int hash = 5;
-        hash = 11 * hash + this.pcode;
-        hash = 11 * hash + Objects.hashCode(this.pcategory);
-        hash = 11 * hash + Objects.hashCode(this.psubcat);
-        hash = 11 * hash + Objects.hashCode(this.pcolor);
-        hash = 11 * hash + Objects.hashCode(this.psize);
-        hash = 11 * hash + Objects.hashCode(this.pdescr);
-        hash = 11 * hash + Objects.hashCode(this.pgender);
-        hash = 11 * hash + this.pquant;
-        hash = 11 * hash + Objects.hashCode(this.pprice);
-        hash = 11 * hash + Objects.hashCode(this.purl);
+        int hash = 3;
+        hash = 67 * hash + this.pcode;
+        hash = 67 * hash + Objects.hashCode(this.pcategory);
+        hash = 67 * hash + Objects.hashCode(this.psubcat);
+        hash = 67 * hash + Objects.hashCode(this.pcolor);
+        hash = 67 * hash + Objects.hashCode(this.psize);
+        hash = 67 * hash + Objects.hashCode(this.pdescr);
+        hash = 67 * hash + Objects.hashCode(this.pdescr2);
+        hash = 67 * hash + Objects.hashCode(this.pgender);
+        hash = 67 * hash + this.pquant;
+        hash = 67 * hash + Objects.hashCode(this.pprice);
+        hash = 67 * hash + Objects.hashCode(this.purl);
         return hash;
     }
 
@@ -171,6 +182,9 @@ public class Product implements Serializable{
         if (!Objects.equals(this.pdescr, other.pdescr)) {
             return false;
         }
+        if (!Objects.equals(this.pdescr2, other.pdescr2)) {
+            return false;
+        }
         if (!Objects.equals(this.pgender, other.pgender)) {
             return false;
         }
@@ -183,12 +197,12 @@ public class Product implements Serializable{
         return true;
     }
 
-   
-
     @Override
     public String toString() {
-        return "Product{" + "pcode=" + pcode + ", pcategory=" + pcategory + ", psubcat=" + psubcat + ", pcolor=" + pcolor + ", psize=" + psize + ", pdescr=" + pdescr + ", pgender=" + pgender + ", pquant=" + pquant + ", pprice=" + pprice + ", purl=" + purl + '}';
+        return "Product{" + "pcode=" + pcode + ", pcategory=" + pcategory + ", psubcat=" + psubcat + ", pcolor=" + pcolor + ", psize=" + psize + ", pdescr=" + pdescr + ", pdescr2=" + pdescr2 + ", pgender=" + pgender + ", pquant=" + pquant + ", pprice=" + pprice + ", purl=" + purl + '}';
     }
+
+  
 
   
 

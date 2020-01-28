@@ -74,19 +74,19 @@ public class OrderDetail {
 
     
     public String getStringSubtotal() {
-        return String.format("%.2f", subtotal);
+        return String.format("%.2f", subtotal).replace(",",".");
     }
 
     public String getStringShipping() {
-        return String.format("%.2f", shipping);
+        return String.format("%.2f", shipping).replace(",",".");
     }
 
     public String getStringTax() {
-        return String.format("%.2f", tax);
+        return String.format("%.2f", tax).replace(",",".");
     }
 
     public String getStringTotal() {
-        return String.format("%.2f", total);
+        return String.format("%.2f", total).replace(",",".");
     }
 
     @Override

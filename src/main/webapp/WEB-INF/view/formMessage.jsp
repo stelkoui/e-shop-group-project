@@ -7,13 +7,22 @@
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%@taglib uri="http://www.springframework.org/tags/form" prefix="form" %>
+<%@taglib prefix="security" uri="http://www.springframework.org/security/tags" %>
+
 
 <!DOCTYPE html>
 <html>
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
         <title>Message Page</title>
+        <style>
+            body{
+                text-align: center;
+            }
+             
+        </style>
     </head>
+    
     <body>
         <form:form 
             action="${pageContext.request.contextPath}/message/send" 
@@ -21,11 +30,9 @@
             modelAttribute="message">
             <form:hidden path="mid"/>
             Message: <form:textarea path="mtext"/>
-
             <form:errors path="mtext" cssClass="error"/> 
             <br>
-            
-            Username: <form:input path="musername"/>
+            Username: <form:input   path="musername" />
             <form:errors path="musername" cssClass="error"/>
             <br>
             <input type="submit" value="Submit">            

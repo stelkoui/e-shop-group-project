@@ -25,8 +25,12 @@ h2{
     margin-bottom: 20px;
 }
 
+h3{
+    margin: 0 0 5px 0 !important;
+}
+
 p {
-    margin-bottom: 20px;
+    margin-bottom: 10px;
     font-size: 16px;
 }
 
@@ -47,7 +51,7 @@ a:before,
 a:after {
     transition: color 0.1s ease-in, background 0.1s ease-in;
 }
-.navbar-inverse .navbar-nav > li > a, .fa-shopping-cart, strong {
+.navbar-inverse .navbar-nav > li > a, .navbar-inverse .navbar-nav > li {
     color: #c6d550;
     font-weight: bold;
     text-align: center;
@@ -64,6 +68,10 @@ a:after {
 li > i{
     height: 5px;
     margin: 0 ;
+}
+
+.padding_li_nav{
+    padding: 15px 15px 10px 0;
 }
 
 .navbar-brand{
@@ -139,10 +147,10 @@ input[type=text]{
     float: left;
 }
 
-li > form > input[type=submit]{
+.navbar-inverse .navbar-nav li > form > button{
     background: none;
     border: none;
-    height: 49px;
+    padding: 0;
     color: #c6d550;
     font-weight: bold;
 }
@@ -229,9 +237,9 @@ td {
 #footer {
     position: fixed;
     width: 100%;
-    max-height: 60px;
+    max-height: 40px;
     background: #222;
-    padding: 20px 0 5px;
+    padding: 10px 0 5px;
     bottom: 0;
 }
 
@@ -279,8 +287,6 @@ p.copyright {
     width:107px;
 }
 
-
-
 #select-categ ul li:hover{
     background-color:#F90;
 }
@@ -311,7 +317,7 @@ p.copyright {
     background-color:#900;
 }
 
-ul{
+#select-categ ul, .card-body ul{
     list-style: none;
     padding: 0;
 }
@@ -322,13 +328,18 @@ ul{
     opacity: 0;
 }
 
+.checkbox-btn input:checked+span{
+    background: #428bca;
+    font-weight: bold;
+}
+
 .btn-light {
     background-color: #fff;
     border-color: #e4e4e4;
 }
 
 .img-wrap img {
-    height: 100%;
+    height: 140px;
     max-width: 100%;
     width: auto;
     display: inline-block;
@@ -337,8 +348,45 @@ ul{
 
 .product_item_container{
     margin-left: 10px !important;
+    padding: 10px 0;
+    box-shadow: 0 0.5px 2px 0 rgba(0, 0, 0, 0.1), 0 4px 16px 0 rgba(0, 0, 0, 0.1);
+    border-radius: 4px;
+    max-height: 160px;
+}
+
+.totheRight{
+    float: right;
 }
 
 .card{
     margin: 10px 0;
+}
+
+.label_check{
+    padding-right: 10px;
+}
+
+.checkbox-btn input{
+    width: 42px;
+    height: 34px;
+}
+
+.slider_output{
+    padding: 8px 0;
+} 
+
+#volume{
+    border: 0;
+    font-weight: bold;
+    margin-left: 50px;
+    margin-top: -35px;
+    
+}
+
+#size_filters {
+    margin-bottom: 80px;
+}
+
+.product_item{
+    float: right;
 }

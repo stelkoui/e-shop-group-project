@@ -8,10 +8,13 @@
         <title>JSP Page</title>
     </head>
     <body>
-        <h1>Hello admin!</h1>
+        <h1>admin page</h1>
                 <a href="${pageContext.request.contextPath}/register/showForm">Registration Form</a>
+                <br>
                 <a href="${pageContext.request.contextPath}/message/list">Messages</a>
-                <a href="#">Store</a>
+                <br>
+                <a href="${pageContext.request.contextPath}/product/list">Products</a>
+                
 
     </body>
 </html>

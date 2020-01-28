@@ -37,12 +37,7 @@ public class RegistrationController {
     public List<Role> fereRoles(){
         return roleService.getRoles();
     } 
-    @ModelAttribute("roloi2")
-    public Role  fereRole(){
-        List<Role> list=roleService.getRoles();
-        Role r=list.get(1);
-        return r;
-    }
+  
     
     
     @PostMapping("/processRegistration")
@@ -63,7 +58,7 @@ public class RegistrationController {
         }
         userService.save(user);
         request.getSession().setAttribute("logedinuser", user);
-        return "registration-confirmation";
+        return "redirect:/";
     }
     
 }

@@ -20,9 +20,6 @@ public class HomeController {
         return "admin";
     }
      
-    @RequestMapping("/user")
-    public String user(){
-        return "user";
-    }
-   
+
+//   F$PQy<3)
 }

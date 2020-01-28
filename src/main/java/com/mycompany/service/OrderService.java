@@ -28,12 +28,26 @@ public class OrderService {
         return null;
     }
     
-    public OrderDetail prepareOrderDetail(OrderDetail orderDetail){
+//    public OrderDetail prepareOrderDetail(OrderDetail orderDetail){
+//        float subtotal = 0.0f;
+//        for(Product p: orderDetail.getProducts()){
+//            subtotal += p.getPprice();
+//        }
+//        orderDetail.setProductName(orderDetail.getProducts().toString());
+//        orderDetail.setSubtotal(subtotal);
+//        orderDetail.setShipping(2f);
+//        orderDetail.setTax(5f);
+//        orderDetail.setTotal(subtotal+2+5);
+//        return orderDetail;
+//    }
+    
+    public OrderDetail prepareOrderDetail(List<Product> productList){
         float subtotal = 0.0f;
-        for(Product p: orderDetail.getProducts()){
+        for(Product p: productList){
             subtotal += p.getPprice();
         }
-        orderDetail.setProductName(orderDetail.getProducts().toString());
+        OrderDetail orderDetail = new OrderDetail();
+        orderDetail.setProducts(productList);
         orderDetail.setSubtotal(subtotal);
         orderDetail.setShipping(2f);
         orderDetail.setTax(5f);

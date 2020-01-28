@@ -7,8 +7,10 @@ package com.mycompany.entities;
 
 import java.io.Serializable;
 import java.util.ArrayList;
+import java.util.Date;
 import java.util.List;
 import java.util.Objects;
+import javax.persistence.Basic;
 import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.Entity;
@@ -19,12 +21,22 @@ import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.JoinTable;
 import javax.persistence.ManyToMany;
+import javax.persistence.OneToMany;
 import javax.persistence.Table;
+import javax.persistence.Temporal;
+import javax.persistence.TemporalType;
 import javax.validation.constraints.NotEmpty;
+import javax.validation.constraints.NotNull;
+import javax.validation.constraints.Size;
+import javax.xml.bind.annotation.XmlTransient;
 
 @Entity
 @Table(name="user")
 public class User implements Serializable{
+
+   
+    @OneToMany(mappedBy = "puid")
+    private List<Orders> ordersList;
     
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -39,7 +51,7 @@ public class User implements Serializable{
     private String fname;
     @NotEmpty  
     private String lname;
-   @NotEmpty  
+    @NotEmpty  
     private String email;
     @ManyToMany(fetch = FetchType.LAZY,cascade = CascadeType.ALL)
     @JoinTable(name="user_role",joinColumns = @JoinColumn(name="uid"), inverseJoinColumns = @JoinColumn(name="rid"))
@@ -170,6 +182,19 @@ public class User implements Serializable{
             roles=new ArrayList();
         }
         roles.add(r);
+    }
+
+  
+
+
+   
+    @XmlTransient
+    public List<Orders> getOrdersList() {
+        return ordersList;
+    }
+
+    public void setOrdersList(List<Orders> ordersList) {
+        this.ordersList = ordersList;
     }
      
     

@@ -78,4 +78,37 @@ public class ProductDaoImpl implements ProductDao {
             return list;
         }
     }
+    
+      @Override
+    public List<Product> findForMen(String category) {
+            Query q = getSession().createQuery(
+//                    "SELECT * FROM product WHERE pgender = 'men' && pdescr ='" + searchCriteria +"'"
+                    "SELECT p FROM Product p WHERE p.pgender = :gender AND p.pdescr = :pdescr"
+            );
+
+            q.setParameter("gender", "men");
+            q.setParameter("pdescr", category);
+            List<Product> list = q.getResultList();
+            return list;
+     }
+
+    @Override
+    public List<Product> findForWomen(String category) {
+        Query q = getSession().createQuery("SELECT p FROM Product p WHERE p.pgender = :gender AND p.pdescr = :pdescr");
+
+            q.setParameter("gender", "women");
+            q.setParameter("pdescr", category);
+            List<Product> list = q.getResultList();
+            return list;
+    }
+    
+    @Override
+    public List<Product> findForKids(String category) {
+        Query q = getSession().createQuery("SELECT p FROM Product p WHERE p.pgender = :gender AND p.pdescr = :pdescr");
+
+            q.setParameter("gender", "kids");
+            q.setParameter("pdescr", category);
+            List<Product> list = q.getResultList();
+            return list;
+    }
 }

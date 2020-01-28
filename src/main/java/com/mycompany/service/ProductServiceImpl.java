@@ -1,8 +1,4 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
+
 package com.mycompany.service;
 
 import com.mycompany.dao.ProductDao;
@@ -49,6 +45,23 @@ public class ProductServiceImpl implements ProductService{
     @Override
     public List<Product> findProductsByGender(String searchCriteria, String pgender) {
         List<Product> list = pdao.findByGender(searchCriteria, pgender);
+        return list;
+    }
+  @Override
+    public List<Product> findProductsForMen(String category) {
+        List<Product> list = pdao.findForMen(category);
+        return list;
+    }
+
+    @Override
+    public List<Product> findProductsForWomen(String category) {
+        List<Product> list = pdao.findForWomen(category);
+        return list;
+    }
+
+    @Override
+    public List<Product> findProductsForKids(String category) {
+        List<Product> list = pdao.findForKids(category);
         return list;
     }
     
