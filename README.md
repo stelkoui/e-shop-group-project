@@ -11,4 +11,4 @@ This is a spring booot app purposes to implement Crud services and Rest Api.
  * Create react app with Vue.js tempalte
  
 ### How it works
-Frontedn listen to [http://localhost:9000] .
+Frontend listen to <http://localhost:9000>
