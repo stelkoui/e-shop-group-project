@@ -11,4 +11,5 @@ This is a spring booot app purposes to implement Crud services and Rest Api.
  * Create react app with Vue.js tempalte
  
 ### How it works
-Frontend listen to <http://localhost:9000>
+Run app with mvn clean install,mvn package,???...The server listens to <http://localhost:8080/api>
+Frontend listen to <http://localhost:9000> , in the springbootclient-folder execute : npm install and then npm run dev
